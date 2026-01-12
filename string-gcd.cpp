@@ -9,7 +9,9 @@ public:
         std::string x = str2;
         for(int i = str2.length(); i > 0; i--){
             if(str1.find(x + x) != std::string::npos){
+                std::cout << "repeat!" << "\n";
                 for(int i = 0; i < str1.length(); i+= x.length()){
+                    std::cout << i << ") comparing " << str1.substr(i, x.length()) << " with: " << x << "\n";
                     if(str1.compare(i, x.length(), x) != 0) return gcd;
                 }
                 gcd = x;
@@ -30,7 +32,7 @@ int main(){
     std::cout << "TestCase one returns: " << a << std::endl;
     b = s.gcdOfStrings("ABABAB", "ABAB");
     std::cout << "TestCase two returns: " << b << std::endl;
-    c = s.gcdOfStrings("LEET", "CODE");
+    c = s.gcdOfStrings("TAUXXTAUXXTAUXXTAUXXTAUXX", "TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX");
     std::cout << "TestCase three returns: " << c << std::endl;
     d = s.gcdOfStrings("AAAAAB", "AAA");
     std::cout << "TestCast four returns: " << d << std::endl;
